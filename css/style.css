@@ -1,0 +1,1013 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #EBFEF2;
+}
+
+@font-face {
+  font-family: source_serif_4_italic;
+  src: url('/fonts/SourceSerif4-Italic.ttf');
+}
+
+@font-face {
+  font-family: source_serif_4;
+  src: url('/fonts/SourceSerif4.ttf');
+}
+
+
+p {
+  font-family: source_serif_4;
+  font-size: 16px;
+  line-height: 2;
+}
+
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  color: #F0C020;
+}
+
+h3 {
+  font-family: 'Courier New', Courier, monospace;
+  color: #2B755C;
+}
+
+button {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  background-color: #2B755C;
+  border: 5px #F0C020 solid;
+  border-radius: 2em;
+  padding-block: 0.5em;
+  cursor: pointer;
+  color: #F0C020;
+  font-weight: bold;
+}
+
+a button {
+  color: #F0C020;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.opdeler_godkendelse {
+  width: 100%;
+}
+
+.opdeler_desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .opdeler_mobil {
+    display: none;
+  }
+
+  .opdeler_desktop {
+    display: block;
+  }
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 5em 2em;
+  text-align: center;
+  width: 100%;
+}
+
+.desc h1 {
+  font-size: 25px;
+}
+
+.opdeler_desc {
+  margin-inline: 2em;
+  margin-block: 2em 1em;
+}
+
+.base_container {
+  display: flex;
+  padding-top: 4.5em;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/*
+  ______________________
+
+  Godkendelse START
+  ______________________
+  */
+
+.godkendelse {
+  background: #CEF9DD;
+}
+
+.godkendelse_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-inline: 2em;
+}
+
+.godkendelse_logo {
+  width: 50%;
+  margin-block: 10em 2em;
+}
+
+.godkendelse_knap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2em;
+  margin-block: 3em;
+}
+
+.godkendelse_knap button {
+  width: 8em;
+}
+
+/* Desktop */
+
+@media (min-width: 768px) {
+  .godkendelse_logo {
+    width: 30%;
+  }
+
+  .godkendelse_container p {
+    font-size: 30px;
+  }
+
+  .godkendelse_knap button {
+    width: 15em;
+  }
+
+}
+
+@media (min-width: 1000px) {
+  .godkendelse_logo {
+    width: 20%;
+  }
+}
+
+/*
+  ______________________
+
+  Godkendelse SLUT
+  ______________________
+
+  ______________________
+
+  Adgang Nægtet START
+  ______________________
+  */
+
+.nægtet_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-inline: 2em;
+}
+
+.nægtet_container h1 {
+  margin-block: 2em 1em;
+  font-size: 40px;
+}
+
+.nægtet_container p {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  width: 60%;
+  color: #2B755C;
+}
+
+.nægtet_container button {
+  padding: 0.5em 3em;
+  margin-block-start: 2em;
+}
+
+.frem {
+  margin-block: 3em;
+}
+
+/*
+  ______________________
+
+  Adgang Nægtet SLUT
+  ______________________
+
+  ______________________
+
+  Navbar START
+  ______________________
+  */
+.logo img {
+  position: absolute;
+  margin-top: 1em;
+  left: 50%;
+  width: 20%;
+  transform: translate(-50%, 0);
+}
+
+.logo {
+  z-index: 200;
+}
+
+.wrapper {
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  position: fixed;
+  background-color: #CEF9DD;
+  height: 4.5em;
+  width: 100%;
+  z-index: 100;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #2B755C;
+  font-weight: bold;
+}
+
+.menu li {
+  list-style: circle;
+  font-weight: bold;
+}
+
+.nav_link,
+.dropdown li {
+  list-style: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  inset: 0 0 0 40%;
+  margin: 0 0;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 200;
+  padding: 4em 2em;
+  gap: 1em;
+  background-color: #D2E2FF;
+  opacity: 90%;
+  transform: translateX(100%);
+  transition: 350ms ease-out;
+  z-index: 300;
+}
+
+.menu[data-visible="true"] {
+  transform: translateX(0%);
+}
+
+.dropdown {
+  display: block;
+  position: relative;
+  font-size: 12px;
+  z-index: 200;
+}
+
+.dropdown a {
+  font-weight: bold;
+}
+
+/* Navbar animation*/
+.nav_toggle {
+  display: block;
+  position: absolute;
+  background: url("/img/nav/burger_menu.png");
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  width: 1.5rem;
+  aspect-ratio: 1;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 9999;
+}
+
+.nav_toggle[aria-expanded="true"] {
+  background: url("/img/nav/x.png");
+  background-size: contain;
+  width: 1.2rem;
+}
+
+.dropdown li:hover a {
+  color: #F0C020;
+}
+
+/* tablet - computer navbar*/
+
+
+@media (min-width: 768px) {
+  .nav_toggle {
+    display: none;
+  }
+
+  .menu li {
+    list-style: none;
+    font-size: 18px;
+  }
+
+  .logo img {
+    width: 5%;
+  }
+
+  .menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    position: relative;
+    flex-direction: row;
+    text-wrap: nowrap;
+    inset: 0 0 0 0;
+    margin: 0 0;
+    font-size: 14px;
+    padding: 1em 1em;
+    background: transparent;
+    backdrop-filter: none;
+    transition: none;
+    margin-inline-end: 4em;
+  }
+
+  .nav_link,
+  .dropdown li {
+    list-style: none;
+    padding: 10px 10px;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: absolute;
+    color: black;
+    padding: 6px 0;
+    margin: 10px -10px;
+    background-color: #D2E2FF;
+    opacity: 90%;
+    box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top: solid 2px;
+    border-top-color: #F0C020;
+    display: none;
+  }
+
+  .shop:hover .dropdown {
+    display: block;
+  }
+
+  .guide:hover .dropdown {
+    display: block;
+  }
+
+  .events:hover .dropdown {
+    display: block;
+  }
+
+  .om_os:hover .dropdown {
+    display: block;
+  }
+
+
+
+  .dropdown li:hover {
+    color: #F0C020;
+    text-decoration: underline;
+  }
+}
+
+/*
+  ______________________
+
+  Navbar SLUT
+  ______________________
+
+  ______________________
+
+  Forside START
+  ______________________
+  */
+
+.forside_container {
+  display: flex;
+  overflow: hidden;
+  padding-top: 4.5em;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.forside_bar {
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+}
+
+.forside_tekst {
+  text-align: center;
+  margin-block: 2em;
+}
+
+.forside_tekst p {
+  font-family: source_serif_4_italic;
+  font-size: 30px;
+  color: #F0C020;
+}
+
+.opdeler_forside {
+  margin-block-end: 2em;
+  padding-inline: 2em;
+  width: 100%;
+}
+
+.forside_container button {
+  padding: 0.5em 3em;
+}
+
+.forside_container a {
+  margin-block: 2em;
+}
+
+@media (min-width: 768px) {
+  .forside_tekst {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+}
+
+
+/*
+  ______________________
+
+  Forside SLUT
+  ______________________
+
+  ______________________
+
+  Shop Alkoholfi Øl START
+  ______________________
+  */
+
+.classic {
+  grid-area: classic;
+}
+
+.humlesovs {
+  grid-area: humlesovs;
+}
+
+.juleale {
+  grid-area: juleale;
+}
+
+.porter {
+  grid-area: porter;
+}
+
+.øl_grid img {
+  width: 100%;
+}
+
+
+.øl_grid {
+  display: grid;
+  grid-template: auto;
+  grid-template-areas:
+    'classic'
+    'humlesovs'
+    'juleale'
+    'porter';
+  width: 100%;
+  padding-inline: 2em;
+  gap: 2em;
+}
+
+@media (min-width: 768px) {
+  .øl_grid {
+    grid-template: auto auto;
+    grid-template-areas:
+      'classic juleale'
+      'humlesovs porter';
+    ;
+    padding-inline: 10em;
+    column-gap: 10em;
+  }
+}
+
+/*
+  ______________________
+
+  Shop Alkoholfi Øl SLUT
+  ______________________
+
+
+  ______________________
+
+  Dåser Start
+  ______________________
+*/
+
+.øl_produkt {
+  grid-area: øl_produkt;
+  width: 100%;
+}
+
+.øl_hand {
+  grid-area: øl_hand;
+  width: 100%;
+}
+
+.øl_tekst {
+  grid-area: øl_tekst;
+  width: 100%;
+}
+
+.dåse_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  'øl_produkt øl_tekst'
+  'øl_hand øl_tekst';
+  padding-block-start: 10em;
+  padding-inline: 2em;
+  row-gap: 1em;
+  column-gap: 2em;
+}
+
+.øl_tekst {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.knapper_desktop {
+  display: none;
+  width: 100%;
+  flex-direction: row;
+  padding: 4em 2em;
+  gap: 4em;
+}
+
+.knapper_desktop button {
+  width: 100%;
+}
+
+.knapper_mobil {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  padding: 4em 2em;
+  gap: 4em;
+}
+
+.knapper_mobil button {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .dåse_container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+  'øl_produkt øl_hand øl_tekst øl_tekst';
+  gap: 6em;
+  }
+
+  .knapper_desktop {
+    display: flex;
+  }
+
+  .knapper_mobil {
+    display: none;
+  }
+}
+
+  
+ /* ______________________
+
+  Dåser SLUT
+  ______________________
+  
+  
+  ______________________
+
+  Shop Tilbehør START
+  ______________________
+  */
+
+.classic_glas {
+  grid-area: classic_glas;
+}
+
+.simpel_glas {
+  grid-area: simpel_glas;
+}
+
+.hank_glas {
+  grid-area: hank_glas;
+}
+
+.mulepose {
+  grid-area: mulepose;
+}
+
+.hoodie {
+  grid-area: hoodie;
+}
+
+.stickers {
+  grid-area: stickers;
+}
+
+.tilbehør_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'classic_glas simpel_glas'
+    'hank_glas mulepose'
+    'hoodie stickers';
+  width: 100%;
+  padding-inline: 2em;
+  gap: 2em;
+  justify-content: center;
+}
+
+.tilbehør_grid img {
+  width: 100%;
+}
+
+.tilbehør_desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tilbehør_grid a {
+  text-decoration: none;
+}
+
+.tilbehør_desc p {
+  font-size: 24px;
+}
+
+.glas {
+  color: #F0C020;
+}
+
+.pris {
+  color: #2B755C;
+}
+
+@media (min-width: 768px) {
+  .tilbehør_grid {
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'classic_glas simpel_glas hank_glas'
+      'mulepose hoodie stickers';
+    column-gap: 6em;
+    row-gap: 4em;
+  }
+
+  .tilbehør_desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/*
+  ______________________
+
+  Shop Tilbeør SLUT
+  ______________________
+
+  ______________________
+
+  Mad og Fad START
+  ______________________
+  */
+
+.img_1 {
+  width: 100%;
+}
+
+.tekst_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  padding: 2em;
+}
+
+.tekst_1 a {
+  padding-block: 2em;
+}
+
+.tekst_1 button {
+  padding: 0.5em 2em;
+}
+
+.img_2 {
+  width: 100%;
+}
+
+.tekst_2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2em;
+}
+
+.tekst_2 a {
+  padding-block: 2em;
+  text-decoration: none;
+  font-style: italic;
+  color: #2B755C;
+}
+
+  .mof_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+  }
+
+
+  @media (min-width: 768px) {
+    .intro {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding-inline: 6em;
+    }
+
+    .tekst_1 {
+      padding-inline: 5em;
+    }
+
+    .le_coq {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 4em 6em;
+    }
+
+    .tekst_2 {
+      padding-inline: 5em;
+    }
+
+    .img_2 {
+      width: 55%;
+    }
+  }
+
+  /*
+  ______________________
+
+  Mad og Fad SLUT
+  ______________________
+
+  ______________________
+
+  Vores Vision START
+  ______________________
+  */
+
+  .vores_vision_container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .content_container {
+    width: 100%;
+    text-align: start;
+  }
+
+
+  .content_container img {
+    width: 100%;
+  }
+
+.content_container div {
+  margin-inline: 2em;
+  margin-block: 1em 4em;
+  line-height: 2;
+}
+
+@media (min-width: 768px) {
+  .vores_vision_container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    padding-inline: 6em;
+    gap: 10em;
+  }
+
+  .content_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+
+  .content_container div {
+    margin-inline: 0;
+  }
+}
+
+  /*
+  ______________________
+
+  Vores Vision SLUT
+  ______________________
+
+  ______________________
+
+  Vendespil START
+  ______________________
+  */
+
+.vendespil_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-inline: 6em;
+}
+
+.card {
+  width: 100%;
+  perspective: 800px;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card_inner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  transition: 800ms;
+  transform-style: preserve-3d;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card_inner {
+  transform: rotateY(180deg);
+}
+
+@media (min-width: 768px) {
+  .vendespil_container {
+    flex-direction: row;
+    gap: 10em;
+    padding-inline: 10em;
+  }
+}
+
+ /*
+  ______________________
+
+  Vendespil SLUT
+  ______________________
+
+  ______________________
+
+Footer START
+  ______________________
+  */
+
+  footer {
+    margin-block-start: 6em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fdefc1;
+    align-items: center;
+    padding: 2em;
+  }
+
+  .footer_container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-block-end: 2em;
+  }
+
+  .socialemedier {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 20%;
+    align-items: center;
+    gap: 1em;
+    float: right;
+  }
+
+  .footer_logo {
+    width: 25%;
+  }
+
+  footer p {
+    font-style: italic;
+    color: #2B755C;
+  }
+
+  @media (min-width: 768px) {
+    .footer_container {
+      padding-inline: 10em;
+    }
+    
+    .footer_logo {
+      width: 5%;
+    }
+
+    .socialemedier {
+      width: 100%;
+    }
+  }
+
+   /*
+  ______________________
+
+  Footer SLUT
+  ______________________
+
+  ______________________
+
+tom side START
+  ______________________
+  */
+
+  .tom_side_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2em;
+    padding-block: 10em;
+  }
+
+  .tom_side_container img button {
+    padding: 0.5em 1em;
+    width: 100%;
+    padding-inline: 2em;
+  }
+
+  .tom_side_container button {
+    padding: 0.5em 2em;
+  }
+
+  @media (min-width: 768px) {
+    .tom_side_container img button {
+      width: 30%;
+    }
+  }
+
+     /*
+  ______________________
+
+tom side SLUT
+  ______________________
